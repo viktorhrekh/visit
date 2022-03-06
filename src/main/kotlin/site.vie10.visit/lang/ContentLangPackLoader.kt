@@ -11,7 +11,7 @@ import site.vie10.visit.lang.LangPackLoader.Companion.BASE_PATH_TO_LANG
  **/
 class ContentLangPackLoader(
     private val contentLoader: ContentLoader
-) : LangPackLoader {
+) : BaseLangPackLoader() {
 
     private val json = Json {
         ignoreUnknownKeys = true
@@ -19,16 +19,8 @@ class ContentLangPackLoader(
     private val String.withBasePathToLang: String
         get() = BASE_PATH_TO_LANG.replace("{name}", this)
 
-    override fun loadOrDefault(langCode: String, onResult: (LangPack) -> Unit) {
-        tryLoadOrDefault(langCode) {
-            it.onSuccess(onResult).onFailure { e ->
-                e.printStackTrace()
-            }
-        }
-    }
-
-    private fun tryLoadOrDefault(name: String, onResult: (Result<LangPack>) -> Unit) = runCatching {
-        contentLoader.tryLoad(name.withBasePathToLang) {
+    override fun tryLoadOrDefault(langCode: String, onResult: (Result<LangPack>) -> Unit) {
+        contentLoader.tryLoad(langCode.withBasePathToLang) {
             it.onSuccess { content ->
                 val result: Result<LangPack> = runCatching {
                     json.decodeFromString(content)
