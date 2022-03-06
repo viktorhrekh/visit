@@ -1,0 +1,24 @@
+{
+  "code": "en",
+  "word": {
+    "ukrainian": "Ukrainian",
+    "english": "English",
+    "settings": "Settings",
+    "mode": "Mode",
+    "light": "Light",
+    "dark": "Dark",
+    "language": "Language",
+    "linked_in": "LinkedIn",
+    "telegram": "Telegram",
+    "git_hub": "GitHub"
+  },
+  "text": {
+    "full_name": "Hrekh Viktor",
+    "dev_label": "Development by vie10",
+    "telegram_link": "https://t.me/vie_10",
+    "linked_in_link": "https://www.linkedin.com/in/viktor-hrekh-523610215/",
+    "git_hub_link": "https://github.com/vie10",
+    "kotlin_dev": "Kotlin Developer",
+    "first_tip": "Most known as vie10."
+  }
+}

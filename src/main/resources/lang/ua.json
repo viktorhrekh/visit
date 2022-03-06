@@ -1,0 +1,24 @@
+{
+  "code": "ua",
+  "word": {
+    "ukrainian": "Українська",
+    "english": "Англійська",
+    "settings": "Налаштування",
+    "mode": "Режим",
+    "light": "Світлий",
+    "dark": "Темний",
+    "language": "Мова",
+    "linked_in": "LinkedIn",
+    "telegram": "Telegram",
+    "git_hub": "GitHub"
+  },
+  "text": {
+    "full_name": "Грех Віктор",
+    "dev_label": "Розробка vie10",
+    "telegram_link": "https://t.me/vie_10",
+    "linked_in_link": "https://www.linkedin.com/in/viktor-hrekh-523610215/",
+    "git_hub_link": "https://github.com/vie10",
+    "kotlin_dev": "Kotlin Розробник",
+    "first_tip": "Більш відомий як vie10."
+  }
+}
