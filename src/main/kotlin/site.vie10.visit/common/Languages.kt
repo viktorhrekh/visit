@@ -6,5 +6,5 @@ package site.vie10.visit.common
 object Languages {
 
     const val English = "en"
-    const val Ukrainian = "ua"
+    const val Ukrainian = "uk"
 }
