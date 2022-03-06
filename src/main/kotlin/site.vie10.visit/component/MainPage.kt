@@ -61,6 +61,11 @@ private val PageContent = FC<Props> {
     }
     PageFooter()
     SettingsDrawer()
+    if (LanguageCookie.value == null) {
+        CloseableDialogModule {
+            LanguageDialog()
+        }
+    }
 }
 
 private val PageHeader = FC<Props> {

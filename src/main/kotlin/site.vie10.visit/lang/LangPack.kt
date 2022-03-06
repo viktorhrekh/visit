@@ -39,7 +39,9 @@ data class LangPack(
         @SerialName("telegram")
         val telegram: String,
         @SerialName("pdf")
-        val pdf: String
+        val pdf: String,
+        @SerialName("yes")
+        val yes: String
     )
 
     @Serializable
@@ -57,6 +59,8 @@ data class LangPack(
         @SerialName("kotlin_dev")
         val kotlinDev: String,
         @SerialName("first_tip")
-        val firstTip: String
+        val firstTip: String,
+        @SerialName("is_it_right")
+        val isItRight: String
     )
 }

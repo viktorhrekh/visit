@@ -3,6 +3,7 @@ package site.vie10.visit.component
 import react.FC
 import react.Props
 import react.useContext
+import react.useEffect
 import site.vie10.visit.contentLoader
 
 /**
@@ -18,7 +19,10 @@ val ContentMarkdown = FC<ContentMarkdownProps> { props ->
     var content by useContext(MarkdownContext)
     val langPack by useContext(LanguageContext)
     Markdown()
-    contentLoader.load("${props.contentPath.orEmpty()}${langPack.code}-${props.contentName}.md") {
-        content = it
+
+    useEffect {
+        contentLoader.load("${props.contentPath.orEmpty()}${langPack.code}-${props.contentName}.md") {
+            content = it
+        }
     }
 }

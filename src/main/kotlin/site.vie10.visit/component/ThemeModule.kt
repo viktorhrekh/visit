@@ -25,6 +25,8 @@ import site.vie10.visit.util.wordFromContext
 /**
  * @author vie10
  **/
+val ThemeCookie = Cookie("theme")
+
 typealias ThemeState = StateInstance<Theme>
 
 val ThemeContext = createContext<ThemeState>()
@@ -118,5 +120,3 @@ private fun setThemeColorMeta(color: String) {
         }
     }
 }
-
-val ThemeCookie = Cookie("theme")
