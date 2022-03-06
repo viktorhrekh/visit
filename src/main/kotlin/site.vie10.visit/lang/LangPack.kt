@@ -37,7 +37,9 @@ data class LangPack(
         @SerialName("git_hub")
         val gitHub: String,
         @SerialName("telegram")
-        val telegram: String
+        val telegram: String,
+        @SerialName("pdf")
+        val pdf: String
     )
 
     @Serializable

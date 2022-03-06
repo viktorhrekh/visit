@@ -1,19 +1,21 @@
 package site.vie10.visit.component
 
-import site.vie10.visit.common.GridAreas
-import site.vie10.visit.common.Sizes.Footer
-import site.vie10.visit.common.Sizes.Header
 import csstype.*
 import csstype.Auto.auto
-import kotlinx.browser.window
 import kotlinx.js.jso
 import mui.icons.material.GitHub
 import mui.icons.material.LinkedIn
 import mui.icons.material.PictureAsPdf
 import mui.icons.material.Telegram
-import mui.material.*
+import mui.material.Box
+import mui.material.Container
+import mui.material.Grid
+import mui.material.Typography
 import react.FC
 import react.Props
+import site.vie10.visit.common.GridAreas
+import site.vie10.visit.common.Sizes.Footer
+import site.vie10.visit.common.Sizes.Header
 import site.vie10.visit.util.textFromContext
 import site.vie10.visit.util.wordFromContext
 
@@ -88,13 +90,10 @@ private val PageHeader = FC<Props> {
             Grid {
                 item = true
 
-                IconButton {
-                    color = IconButtonColor.inherit
-                    onClick = {
-                        window.open("etc/version.pdf", "_blank")?.focus()
-                    }
-
-                    PictureAsPdf()
+                LinkButton {
+                    label = wordFromContext.pdf
+                    icon = PictureAsPdf
+                    link = "etc/version.pdf"
                 }
                 SettingsTooltip()
             }
