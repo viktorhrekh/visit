@@ -5,7 +5,7 @@ package site.vie10.visit.content
  **/
 interface ContentLoader {
 
-    fun load(path: String, onResult: suspend (String) -> Unit)
+    fun load(path: String, onResult: (String) -> Unit)
 
-    fun load(path: String): Result<String>
+    fun tryLoad(path: String, onResult: (Result<String>) -> Unit)
 }

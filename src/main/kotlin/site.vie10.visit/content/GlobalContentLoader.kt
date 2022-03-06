@@ -1,29 +1,42 @@
 package site.vie10.visit.content
 
-import kotlinx.coroutines.launch
 import org.w3c.xhr.XMLHttpRequest
-import site.vie10.visit.scope
 
 object GlobalContentLoader : ContentLoader {
 
-    override fun load(path: String, onResult: suspend (String) -> Unit) {
-        scope.launch {
-            load(path).onSuccess {
-                onResult(it)
-            }.onFailure {
-                it.printStackTrace()
+    private val XMLHttpRequest.loaded: Boolean
+        get() = readyState == 4.toShort()
+    private val XMLHttpRequest.ok: Boolean
+        get() = status == 200.toShort()
+
+    override fun load(path: String, onResult: (String) -> Unit) {
+        tryLoad(path) {
+            it.onSuccess { content ->
+                onResult(content)
+            }.onFailure { e ->
+                e.printStackTrace()
             }
         }
     }
 
-    override fun load(path: String): Result<String> = runCatching {
-        val request = XMLHttpRequest()
-        request.open("GET", path, async = false)
-        request.send(null)
-        val responseText = request.responseText
-        if (request.status != 200.toShort()) {
-            throw Exception(responseText)
+    override fun tryLoad(path: String, onResult: (Result<String>) -> Unit) {
+        runCatching {
+            val request = XMLHttpRequest()
+            request.open("GET", path, async = true)
+            request.onload = {
+                if (request.loaded) {
+                    val responseText = request.responseText
+                    val result: Result<String> = runCatching {
+                        if (request.ok) {
+                            responseText
+                        } else {
+                            throw Exception(responseText)
+                        }
+                    }
+                    onResult(result)
+                }
+            }
+            request.send(null)
         }
-        responseText
     }
 }

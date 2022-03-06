@@ -1,17 +1,15 @@
 package site.vie10.visit.component
 
-import site.vie10.visit.common.Languages
 import csstype.Color
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 import kotlinx.js.jso
-import site.vie10.visit.lang.LangPack
-import site.vie10.visit.langPackLoader
 import mui.material.List
 import mui.material.ListItemButton
 import mui.material.Typography
 import react.*
+import site.vie10.visit.common.Languages
 import site.vie10.visit.cookie.Cookie
+import site.vie10.visit.lang.LangPack
+import site.vie10.visit.langPackLoader
 import site.vie10.visit.util.wordFromContext
 
 /**
@@ -52,9 +50,7 @@ val LanguageSelector = FC<Props> {
             selected = langPack.code == langCode
             onClick = {
                 langPackLoader.loadOrDefault(langCode) {
-                    withContext(Dispatchers.Main) {
-                        langPack = it
-                    }
+                    langPack = it
                 }
             }
 
@@ -66,9 +62,7 @@ val LanguageSelector = FC<Props> {
             selected = langPack.code == langCode
             onClick = {
                 langPackLoader.loadOrDefault(langCode) {
-                    withContext(Dispatchers.Main) {
-                        langPack = it
-                    }
+                    langPack = it
                 }
             }
 

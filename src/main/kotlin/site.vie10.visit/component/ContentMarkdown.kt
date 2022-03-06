@@ -1,11 +1,9 @@
 package site.vie10.visit.component
 
-import site.vie10.visit.contentLoader
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 import react.FC
 import react.Props
 import react.useContext
+import site.vie10.visit.contentLoader
 
 /**
  * @author vie10
@@ -21,8 +19,6 @@ val ContentMarkdown = FC<ContentMarkdownProps> { props ->
     val langPack by useContext(LanguageContext)
     Markdown()
     contentLoader.load("${props.contentPath.orEmpty()}${langPack.code}-${props.contentName}.md") {
-        withContext(Dispatchers.Main) {
-            content = it
-        }
+        content = it
     }
 }

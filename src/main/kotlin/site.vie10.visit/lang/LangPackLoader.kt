@@ -5,7 +5,7 @@ package site.vie10.visit.lang
  **/
 interface LangPackLoader {
 
-    fun loadOrDefault(langCode: String, onResult: suspend (LangPack) -> Unit)
+    fun loadOrDefault(langCode: String, onResult: (LangPack) -> Unit)
 
     companion object {
 
