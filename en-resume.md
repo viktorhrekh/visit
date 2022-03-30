@@ -1,4 +1,9 @@
-I’m an Idealist person who targets high level in the things works with. I love programming – no limits, you can be better always. I got a lot of knowledges while working with different peoples from all the world on open-source projects and not only. I always open to new mets and experience exchanges. I love to study things that I can use in practice. Also I'm a stubborn person. Therefore all the things I starts should be finished. I never drop something before try a lot of different ways and ideas. I like improve things i can. I prefer practice to theory — not without but not only. Active, cheerful and motivated to engage time with a team for joint achievements. I’ve started programming in Java and switch to Kotlin later.
+I’m a passionate programmer and an idealist who is always willing to learn new things. I'm not affrain of challenges.
+I've learned a lot by working with people all around the globe on projects radically different. I love to experience new things and meet new people.
+What I prefer above all is to put into practice what I learn.
+Also, I'm a stubborn person which means that I am eager to finish the projects I start.
+I never drop something before trying a lot of different ways and ideas to make it. I like improve things I can. I prefer practice to theory — not without but not only. Active, cheerful and motivated to engage time with a team for joint achievements. 
+I started programming in Java then moved to Kotlin.
 
 <pre>
 
@@ -6,9 +11,13 @@ I’m an Idealist person who targets high level in the things works with. I love
 
 #### Experience
 
-**Freelance**
+**Freelance since 03.2022**
 
-Not too much. Not too little. If you would like I tell you more myself on the meet.
+I'm experienced with independent projects in various languages such as Kotlin (JS,JVM), Java.
+
+I've worked for a few server projects, and it made me learn so much about Ktor, Ktorm, Hoplite, Kotlinx Coroutines, Koin, KodeIn, Mockk, Kotest, etc. Including the next tools for work in team and efficiency cooperate: GitHub (workflows as well), Gradle.
+
+In this time have got experience with Kotlin/JS web application development with React and MUI in the box.
 
 **Looks like a good place for your company**
 
@@ -20,13 +29,7 @@ Doesn't it sounds like an appeal?
 
 #### Languages
 
-**Ukrainian**
-
-Native speaker. I am proud to be Ukrainian!
-
-**English**
-
-I'm actively learning. My current level is around limited working proficiency.
+**Ukrainian**, **English**. 
 
 <pre>
 
