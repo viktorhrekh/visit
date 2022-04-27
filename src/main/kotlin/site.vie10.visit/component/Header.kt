@@ -1,12 +1,12 @@
 package site.vie10.visit.component
 
 import csstype.pct
-import kotlinx.js.jso
 import mui.material.AppBar
 import mui.material.AppBarPosition
 import mui.material.Toolbar
 import mui.system.SxProps
 import mui.system.Theme
+import mui.system.sx
 import react.FC
 import react.PropsWithChildren
 
@@ -23,7 +23,7 @@ val Header = FC<HeaderProps> { props ->
         sx = props.sx
 
         Toolbar {
-            sx = jso {
+            sx {
                 height = 100.pct
             }
 

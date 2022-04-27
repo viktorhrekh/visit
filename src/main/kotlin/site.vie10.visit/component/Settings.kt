@@ -2,11 +2,13 @@ package site.vie10.visit.component
 
 import csstype.*
 import kotlinx.browser.window
-import kotlinx.js.jso
 import mui.icons.material.Close
 import mui.icons.material.Settings
 import mui.material.*
-import mui.system.ResponsiveStyleValue
+import mui.material.styles.TypographyVariant.body1
+import mui.material.styles.TypographyVariant.body2
+import mui.system.responsive
+import mui.system.sx
 import react.*
 import react.dom.aria.ariaLabel
 import site.vie10.visit.util.textFromContext
@@ -50,7 +52,7 @@ val SettingsDrawer = FC<Props> {
     var opened by useContext(SettingsContext)
 
     SwipeableDrawer {
-        sx = jso {
+        sx {
             zIndex = integer(1_1000)
         }
 
@@ -64,12 +66,12 @@ val SettingsDrawer = FC<Props> {
         }
 
         Grid {
-            sx = jso {
+            sx {
                 height = 100.pct
                 width = if (window.innerWidth > 600) 360.px else 310.px
                 justifyContent = JustifyContent.spaceBetween
             }
-            direction = ResponsiveStyleValue(GridDirection.column)
+            direction = responsive(GridDirection.column)
             container = true
 
             Grid {
@@ -89,16 +91,16 @@ val SettingsDrawer = FC<Props> {
 
 private val SettingsFooter = FC<Props> {
     Box {
-        sx = jso {
+        sx {
             padding = 20.px
             textAlign = TextAlign.center
         }
 
         Typography {
-            sx = jso {
+            sx {
                 color = Color("text.secondary")
             }
-            variant = "body2"
+            variant = body2
 
             +textFromContext.devLabel
         }
@@ -107,19 +109,19 @@ private val SettingsFooter = FC<Props> {
 
 private val SettingsContent = FC<Props> {
     Box {
-        sx = jso {
+        sx {
             padding = 20.px
         }
 
         Box {
-            sx = jso {
+            sx {
                 marginBottom = 15.px
             }
             SettingsHeader()
         }
         Divider()
         Box {
-            sx = jso {
+            sx {
                 marginTop = 15.px
             }
 
@@ -127,7 +129,7 @@ private val SettingsContent = FC<Props> {
         }
 
         Box {
-            sx = jso {
+            sx {
                 marginTop = 15.px
             }
 
@@ -140,7 +142,7 @@ private val SettingsHeader = FC<Props> {
     var opened by useContext(SettingsContext)
 
     Grid {
-        sx = jso {
+        sx {
             justifyContent = JustifyContent.spaceBetween
             alignItems = AlignItems.center
             textAlign = TextAlign.center
@@ -151,10 +153,10 @@ private val SettingsHeader = FC<Props> {
             item = true
 
             Typography {
-                sx = jso {
+                sx {
                     textDecoration = TextDecoration.solid
                 }
-                variant = "body1"
+                variant = body1
 
                 +wordFromContext.settings
             }

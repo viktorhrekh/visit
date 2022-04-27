@@ -4,8 +4,9 @@ import csstype.AlignItems
 import csstype.Color
 import csstype.JustifyContent
 import csstype.pct
-import kotlinx.js.jso
 import mui.material.*
+import mui.material.styles.TypographyVariant.caption
+import mui.system.sx
 import react.*
 import site.vie10.visit.common.Languages
 import site.vie10.visit.cookie.Cookie
@@ -58,7 +59,7 @@ private val LanguageDialogActions = FC<Props> {
 
     DialogActions {
         Grid {
-            sx = jso {
+            sx {
                 alignItems = AlignItems.center
                 justifyContent = JustifyContent.center
                 height = 100.pct
@@ -67,13 +68,13 @@ private val LanguageDialogActions = FC<Props> {
             container = true
 
             Grid {
-                sx = jso {
+                sx {
                     width = 100.pct
                 }
                 item = true
 
                 Button {
-                    sx = jso {
+                    sx {
                         width = 100.pct
                     }
                     variant = ButtonVariant.text
@@ -94,10 +95,10 @@ val LanguageSelector = FC<Props> {
     LanguageCookie.value = langPack.code
 
     Typography {
-        sx = jso {
+        sx {
             color = Color("text.secondary")
         }
-        variant = "caption"
+        variant = caption
         gutterBottom = true
 
         +wordFromContext.language.uppercase()

@@ -2,7 +2,7 @@
 // Versions
 ///////////////////////////////////////////////////////////////////////////
 
-val wrappersBom = "0.0.1-pre.313-kotlin-1.6.10"
+val wrappersBom = "0.0.1-pre.332-kotlin-1.6.21"
 val kotlinxCoroutines = "1.6.0"
 val kotlinxSerialization = "1.3.2"
 
@@ -40,7 +40,6 @@ dependencies {
 
     implementation(kotlinw("react"))
     implementation(kotlinw("react-dom"))
-    implementation(kotlinw("react-css"))
 
     implementation(kotlinw("mui"))
     implementation(kotlinw("mui-icons"))

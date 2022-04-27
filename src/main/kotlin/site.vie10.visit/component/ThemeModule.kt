@@ -6,7 +6,6 @@ import csstype.pct
 import csstype.px
 import kotlinx.browser.document
 import kotlinx.dom.appendElement
-import kotlinx.js.jso
 import mui.icons.material.Brightness4
 import mui.icons.material.Brightness7
 import mui.material.CssBaseline
@@ -15,6 +14,8 @@ import mui.material.ToggleButtonGroup
 import mui.material.Typography
 import mui.material.styles.Theme
 import mui.material.styles.ThemeProvider
+import mui.material.styles.TypographyVariant.caption
+import mui.system.sx
 import org.w3c.dom.HTMLMetaElement
 import react.*
 import react.dom.aria.ariaLabel
@@ -36,7 +37,7 @@ val ThemeModule = FC<PropsWithChildren> { props ->
         if (ThemeCookie.value == "dark") Themes.Dark else Themes.Light
     )
     val (theme) = state
-    setThemeColorMeta(theme.palette.primary.main)
+    setThemeColorMeta(theme.palette.primary.main.toString())
 
     ThemeContext.Provider(state) {
         ThemeProvider {
@@ -53,16 +54,16 @@ val ModeToggle = FC<Props> {
     ThemeCookie.value = if (theme === Themes.Dark) "dark" else "light"
 
     Typography {
-        sx = jso {
+        sx {
             color = Color("text.secondary")
         }
-        variant = "caption"
+        variant = caption
         gutterBottom = true
 
         +wordFromContext.mode.uppercase()
     }
     ToggleButtonGroup {
-        sx = jso {
+        sx {
             width = 100.pct
         }
         value = theme
@@ -75,7 +76,7 @@ val ModeToggle = FC<Props> {
         ariaLabel = wordFromContext.mode
 
         ToggleButton {
-            sx = jso {
+            sx {
                 width = 100.pct
                 textTransform = None.none
             }
@@ -83,7 +84,7 @@ val ModeToggle = FC<Props> {
             ariaLabel = wordFromContext.light
 
             Brightness7 {
-                sx = jso {
+                sx {
                     marginRight = 5.px
                 }
             }
@@ -91,7 +92,7 @@ val ModeToggle = FC<Props> {
         }
 
         ToggleButton {
-            sx = jso {
+            sx {
                 width = 100.pct
                 textTransform = None.none
             }
@@ -99,7 +100,7 @@ val ModeToggle = FC<Props> {
             ariaLabel = wordFromContext.dark
 
             Brightness4 {
-                sx = jso {
+                sx {
                     marginRight = 5.px
                 }
             }

@@ -11,6 +11,8 @@ import mui.material.Box
 import mui.material.Container
 import mui.material.Grid
 import mui.material.Typography
+import mui.material.styles.TypographyVariant.h5
+import mui.system.sx
 import react.FC
 import react.Props
 import site.vie10.visit.common.GridAreas
@@ -26,7 +28,7 @@ val MainPage = FC<Props> {
     ThemeModule {
         SettingsModule {
             Box {
-                sx = jso {
+                sx {
                     display = Display.grid
                     gridTemplateRows = array(
                         Header.Height,
@@ -52,7 +54,7 @@ val MainPage = FC<Props> {
 private val PageContent = FC<Props> {
     PageHeader()
     Container {
-        sx = jso {
+        sx {
             gridArea = ident(GridAreas.Content)
             padding = 15.px
         }
@@ -77,7 +79,7 @@ private val PageHeader = FC<Props> {
         }
 
         Grid {
-            sx = jso {
+            sx {
                 alignItems = AlignItems.center
                 justifyContent = JustifyContent.spaceBetween
             }
@@ -87,7 +89,7 @@ private val PageHeader = FC<Props> {
                 item = true
 
                 Typography {
-                    variant = "h5"
+                    variant = h5
 
                     +textFromContext.fullName
                 }
@@ -120,7 +122,7 @@ private val PageFooter = FC<Props> {
 
 private val SocialNetworkButtons = FC<Props> {
     Grid {
-        sx = jso {
+        sx {
             alignItems = AlignItems.center
             justifyContent = JustifyContent.spaceEvenly
         }

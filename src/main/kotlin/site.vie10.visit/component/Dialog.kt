@@ -2,9 +2,9 @@ package site.vie10.visit.component
 
 import csstype.TextAlign
 import csstype.integer
-import kotlinx.js.jso
 import mui.material.Dialog
 import mui.material.DialogTitle
+import mui.system.sx
 import react.*
 
 /**
@@ -29,7 +29,7 @@ val CloseableDialogModule = FC<PropsWithChildren> { props ->
 val CloseableDialog = FC<DialogProps> { props ->
     var opened by useContext(CloseableDialogContext)
     Dialog {
-        sx = jso {
+        sx {
             zIndex = integer(1_1000)
             textAlign = TextAlign.center
         }

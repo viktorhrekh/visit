@@ -3,11 +3,11 @@ package site.vie10.visit
 import kotlinx.browser.document
 import kotlinx.browser.window
 import kotlinx.coroutines.DelicateCoroutinesApi
-import org.w3c.dom.Element
 import react.FC
 import react.Props
 import react.create
-import react.dom.render
+import react.dom.client.Root
+import react.dom.client.createRoot
 import site.vie10.visit.component.LanguageCookie
 import site.vie10.visit.component.LanguageModule
 import site.vie10.visit.component.MainPage
@@ -17,7 +17,7 @@ import site.vie10.visit.lang.ContentLangPackLoader
 import site.vie10.visit.lang.LangPack
 import site.vie10.visit.lang.LangPackLoader
 
-val rootElement: Element = document.getElementById("root")!!
+val root: Root = createRoot(document.getElementById("root")!!)
 val contentLoader: ContentLoader = GlobalContentLoader
 val langPackLoader: LangPackLoader = ContentLangPackLoader(contentLoader)
 
@@ -30,12 +30,12 @@ fun main() {
 }
 
 fun start(langPack: LangPack) {
-    render(FC<Props> {
+    root.render(FC<Props> {
         LanguageModule {
             this.langPack = langPack
             MainPage()
         }
-    }.create(), rootElement)
+    }.create())
 }
 
 
