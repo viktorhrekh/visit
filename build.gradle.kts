@@ -2,7 +2,7 @@
 // Versions
 ///////////////////////////////////////////////////////////////////////////
 
-val wrappersBom = "0.0.1-pre.332-kotlin-1.6.21"
+val wrappersBom = "1.0.0-pre.338"
 val kotlinxCoroutines = "1.6.0"
 val kotlinxSerialization = "1.3.2"
 
