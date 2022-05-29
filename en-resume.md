@@ -1,4 +1,4 @@
-I’m a passionate programmer and an idealist who is always willing to learn new things. I'm not affrain of challenges.
+I’m a passionate programmer and an idealist who is always willing to learn new things. I'm not afraid of challenges.
 I've learned a lot by working with people all around the globe on projects radically different. I love to experience new
 things and meet new people. What I prefer above all is to put into practice what I learn. Also, I'm a stubborn person
 which means that I am eager to finish the projects I start. I never drop something before trying a lot of different ways
