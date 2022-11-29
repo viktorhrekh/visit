@@ -11,7 +11,7 @@ val kotlinxSerialization = "1.3.2"
 ///////////////////////////////////////////////////////////////////////////
 
 plugins {
-    kotlin("js") version "1.7.20"
+    kotlin("js") version "1.7.22"
     kotlin("plugin.serialization") version "1.6.21"
 }
 
